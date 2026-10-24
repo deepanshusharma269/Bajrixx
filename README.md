@@ -50,11 +50,3 @@ Applied on every start; both are idempotent (`IF NOT EXISTS`, `ON CONFLICT DO NO
 - Show "current" vs "your" version in the UI when an edit conflicts, instead of just reloading.
 - Product images, unit-aware price comparison, seller ratings/delivery area.
 
-## At millions of products / listings
-
-- Replace `OFFSET` pagination with keyset pagination.
-- The aggregate `min(price) ... GROUP BY product` over joins will get slow at 10M listings. Maintain a denormalised `product_stats` (min price, offer count, has_stock) updated on listing writes, or move search to OpenSearch/Elasticsearch with listings as nested documents.
-- Cache category lists and hot product pages; add a read replica for buyer traffic.
-- Use Flyway for migrations instead of `schema.sql` run on boot.
-- Partial index on approved sellers or a denormalised `seller_approved` flag on listings to avoid joining `sellers` in the hot path.
-- Rate limiting and trigram search tuning (or full-text search) for typo tolerance and ranking.
