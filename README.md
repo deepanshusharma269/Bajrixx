@@ -8,7 +8,7 @@ Stack: React (Vite) · Spring Boot 3 (Java 17, plain JDBC) · PostgreSQL 16.
 Prereqs: Java 17+, Maven, Node 18+, Docker (for Postgres).
 
 ```bash
-docker compose up -d                 # Postgres on :5432 (db/user/password: bajrix)
+docker compose up -d                 # Postgres on :5432 (db: bajrix)
 cd backend && mvn spring-boot:run    # API on :8080, creates schema + seeds sample data on start
 cd frontend && npm install && npm run dev   # UI on http://localhost:5173 (proxies /api to :8080)
 ```
