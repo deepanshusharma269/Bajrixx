@@ -42,9 +42,6 @@ Applied on every start; both are idempotent (`IF NOT EXISTS`, `ON CONFLICT DO NO
 - Products with no in-stock listing from an approved seller do not appear in search; the detail page still lists their offers (out-of-stock ones greyed out).
 - Sellers can only list existing catalogue products. Creating new catalogue products is not supported.
 
-## Intentionally not implemented
-
-Real auth, product creation/admin screens (seller approval is only via data), buying/checkout, image upload, i18n, Docker images for the apps, integration tests against a real DB.
 
 ## With more time
 
