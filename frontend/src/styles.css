@@ -1,0 +1,55 @@
+:root {
+  --bg: #f6f7f9; --card: #fff; --ink: #1c2330; --muted: #6b7380; --line: #e2e5ea;
+  --brand: #e8590c; --brand-dark: #c74a08; --ok: #2b8a3e; --err: #c92a2a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+.topbar { display: flex; align-items: center; gap: 24px; padding: 12px 24px; background: var(--card); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.topbar h1 { margin: 0; font-size: 20px; color: var(--brand); }
+nav button { border: 0; background: none; font-size: 15px; padding: 8px 14px; cursor: pointer; border-radius: 6px; color: var(--muted); }
+nav button.on { background: #fff1e8; color: var(--brand-dark); font-weight: 600; }
+.who { margin-left: auto; font-size: 14px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+input, select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff; }
+input:disabled { background: var(--bg); color: var(--muted); }
+button { font-family: inherit; }
+.filters { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+.filters input { flex: 1; min-width: 220px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; transition: opacity .15s; }
+.grid.dim { opacity: .55; }
+.card { text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; cursor: pointer; }
+.card:hover { border-color: var(--brand); box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+.card h3 { margin: 8px 0 2px; font-size: 16px; }
+.card p { margin: 4px 0; }
+.price { font-weight: 700; font-size: 18px; }
+.price small { font-weight: 400; color: var(--muted); font-size: 13px; }
+.tag { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; background: #eef1f5; padding: 2px 8px; border-radius: 99px; color: var(--muted); }
+.muted { color: var(--muted); font-size: 13px; }
+.pager { display: flex; gap: 14px; align-items: center; justify-content: center; margin: 22px 0; }
+.pager button, button.primary, button.danger { padding: 7px 14px; border-radius: 6px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+button.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+button.primary:hover:not(:disabled) { background: var(--brand-dark); }
+button.danger { color: var(--err); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.overlay { position: fixed; inset: 0; background: rgba(20,24,32,.5); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
+.modal { background: var(--card); border-radius: 12px; padding: 24px; width: 100%; max-width: 760px; max-height: 90vh; overflow: auto; position: relative; }
+.modal h2 { margin: 8px 0 2px; }
+.close { position: absolute; right: 14px; top: 10px; border: 0; background: none; font-size: 26px; cursor: pointer; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; background: var(--card); margin-top: 12px; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); font-size: 14px; }
+th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td input { width: 100px; }
+tr.out { color: var(--muted); }
+.best { background: #ebfbee; color: var(--ok); font-size: 11px; padding: 2px 7px; border-radius: 99px; margin-left: 6px; }
+.actions { display: flex; gap: 8px; }
+.empty { color: var(--muted); text-align: center; padding: 32px 0; }
+.error { background: #fff5f5; color: var(--err); border: 1px solid #ffc9c9; padding: 10px 12px; border-radius: 6px; }
+.ok { background: #ebfbee; color: var(--ok); border: 1px solid #b2f2bb; padding: 10px 12px; border-radius: 6px; }
+.add { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 4px 16px 16px; margin: 16px 0; }
+.add .row { display: flex; gap: 8px; flex-wrap: wrap; }
+.add .row input[type=number] { width: 110px; }
+.add .row select { min-width: 240px; flex: 1; }
+.status { font-size: 12px; padding: 2px 8px; border-radius: 99px; vertical-align: middle; }
+.status.APPROVED { background: #ebfbee; color: var(--ok); }
+.status.PENDING { background: #fff9db; color: #e67700; }
+.status.REJECTED { background: #fff5f5; color: var(--err); }
